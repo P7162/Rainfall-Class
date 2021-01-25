@@ -1,0 +1,84 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] rainfall = new double[12];
+            double toatalRain = 0;
+            double average = 0;
+
+            Console.WriteLine("Your local weather man here getting paid to tell you the wrong weather!!");
+            Console.WriteLine("In Jan");
+            rainfall[0] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In feb");
+            rainfall[1] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In march");
+            rainfall[2] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In April");
+            rainfall[3] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In may");
+            rainfall[4] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In jun");
+            rainfall[5] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In july");
+            rainfall[6] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In Aug");
+            rainfall[7] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In sep");
+            rainfall[8] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In Oct");
+            rainfall[9] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In Nov");
+            rainfall[10] = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("In Dec");
+            rainfall[11] = Convert.ToDouble(Console.ReadLine());
+            toatalRain = rainfall[0] + rainfall[1] + rainfall[2] + rainfall[3] + rainfall[4] + rainfall[5] + rainfall[6] + rainfall[7] + rainfall[8] + rainfall[9] + rainfall[10] + rainfall[11];
+            double total =  GetTotalRain(toatalRain);
+            average = toatalRain / 12;
+            double avge = GetAverage(average);
+            Console.WriteLine("The total rainfall of the year is:" + total);
+            Console.WriteLine("The average rainfall of the year is:" + avge);
+            double max = MaxRain(rainfall);
+            Console.WriteLine(max);
+            double min = MinRain(rainfall);
+            Console.WriteLine(min);
+        }
+        public static double GetTotalRain(double rain)
+        {
+            return rain;
+        }
+
+        public static double GetAverage(double average)
+        {
+            return average;
+        }
+        public static double MaxRain(double [] rain)
+        {
+            double max = 0;
+            foreach(double i in rain)
+            { 
+                if(i > max)
+                {
+                    max = i;
+                }
+            }
+            return max;
+        }
+        public static double MinRain(double [] rain)
+        {
+            double min = Double.MaxValue;
+
+            foreach(double i in rain)
+            {
+                if(i < min)
+                {
+                    min = i;
+                }
+            }
+            return min;
+        }
+    }
+}
